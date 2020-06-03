@@ -1,6 +1,15 @@
+map_layer: sf_neighborhoods {
+  feature_key: "City neighborhoods"
+  url: "https://raw.githubusercontent.com/shanecglass/san_francisco_311/master/geo_export_8e7e7ccf-4eab-439f-a1b9-6f7d0dbb25bd.json"
+  format:  topojson
+  property_key: "neighborhood"
+}
+
 view: sf_311_service_requests {
   sql_table_name: `bigquery-public-data.san_francisco_311.311_service_requests`
     ;;
+
+
 
   dimension: agency_name {
     type: string
@@ -77,6 +86,7 @@ view: sf_311_service_requests {
 
   dimension: neighborhood {
     type: string
+    map_layer_name: sf_neighborhoods
     sql: ${TABLE}.neighborhood ;;
   }
 

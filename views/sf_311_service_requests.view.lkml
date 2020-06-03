@@ -1,5 +1,4 @@
 map_layer: sf_neighborhoods {
-  feature_key: "name"
   url: "https://raw.githubusercontent.com/shanecglass/san_francisco_311/master/geo_export_8e7e7ccf-4eab-439f-a1b9-6f7d0dbb25bd.json"
   format:  topojson
   property_key: "name"

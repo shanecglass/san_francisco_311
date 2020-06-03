@@ -5,9 +5,9 @@ map_layer: sf_neighborhoods {
 }
 
 view: sf_311_service_requests {
+  drill_fields: [count]
   sql_table_name: `bigquery-public-data.san_francisco_311.311_service_requests`
     ;;
-
 
 
   dimension: agency_name {
@@ -136,6 +136,6 @@ view: sf_311_service_requests {
 
   measure: count {
     type: count
-    drill_fields: [agency_name]
+    drill_fields: [neighborhood,agency_name, category, complaint_type]
   }
 }

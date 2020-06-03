@@ -2,6 +2,7 @@ map_layer: sf_neighborhoods {
   feature_key: "City neighborhoods"
   url: "https://raw.githubusercontent.com/shanecglass/san_francisco_311/master/geo_export_8e7e7ccf-4eab-439f-a1b9-6f7d0dbb25bd.json"
   format:  topojson
+  property_label_key: "name"
 }
 
 view: sf_311_service_requests {
@@ -88,16 +89,6 @@ view: sf_311_service_requests {
     sql: ${TABLE}.neighborhood ;;
     map_layer_name: sf_neighborhoods
 
-  }
-
-  dimension: neighborhood_center_ds {
-    type: string
-    sql: ${TABLE}.neighborhood_center_ds ;;
-  }
-
-  dimension: neighborhood_geom {
-    type: string
-    sql: ${TABLE}.neighborhood_geom ;;
   }
 
   dimension: police_district {

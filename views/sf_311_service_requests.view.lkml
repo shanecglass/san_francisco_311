@@ -136,6 +136,6 @@ view: sf_311_service_requests {
 
   measure: count {
     type: count
-    drill_fields: [neighborhood,agency_name, category, complaint_type]
+    drill_fields: [neighborhood,agency_name, category, complaint_type, status_notes]
   }
 }

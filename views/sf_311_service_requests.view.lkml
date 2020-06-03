@@ -1,4 +1,4 @@
-view: 311_service_requests {
+view: sf_311_service_requests {
   sql_table_name: `bigquery-public-data.san_francisco_311.311_service_requests`
     ;;
 

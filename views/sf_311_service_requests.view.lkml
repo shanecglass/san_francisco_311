@@ -2,7 +2,7 @@ map_layer: sf_neighborhoods {
   feature_key: "City neighborhoods"
   url: "https://raw.githubusercontent.com/shanecglass/san_francisco_311/master/geo_export_8e7e7ccf-4eab-439f-a1b9-6f7d0dbb25bd.json"
   format:  topojson
-  property_key: "neighborhood"
+  property_key: "name"
 }
 
 view: sf_311_service_requests {
@@ -86,8 +86,9 @@ view: sf_311_service_requests {
 
   dimension: neighborhood {
     type: string
-    map_layer_name: sf_neighborhoods
     sql: ${TABLE}.neighborhood ;;
+    map_layer_name: sf_neighborhoods
+
   }
 
   dimension: neighborhood_center_ds {

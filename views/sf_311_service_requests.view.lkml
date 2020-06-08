@@ -17,7 +17,7 @@ view: sf_311_service_requests {
 
   dimension: category {
     type: string
-    sql: ${TABLE}.category ;;
+    sql: IF(STARTS_WITH(category, "General Request"), REGEXP_EXTRACT(category, "^General Request - (.*)"), category) ;;
   }
 
   dimension_group: closed {

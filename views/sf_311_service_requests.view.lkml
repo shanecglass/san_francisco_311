@@ -114,6 +114,11 @@ view: sf_311_service_requests {
     sql: ROUND(TIMESTAMP_DIFF(${TABLE}.closed_date, ${TABLE}.created_date, hour)/24,2) ;;
   }
 
+  measure: closure_rate {
+    type: percent_of_total
+    sql: COUNT(${TABLE}.closed_date)/COUNT(${TABLE}.created_date) ;;
+  }
+
   dimension: source {
     type: string
     sql: ${TABLE}.source ;;

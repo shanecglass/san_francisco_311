@@ -119,6 +119,11 @@ view: sf_311_service_requests {
     sql: COUNT(${TABLE}.closed_date) ;;
   }
 
+  measure: hours_open {
+    type: number
+    sql: IF(${TABLE}.closed_date IS NULL, TIMESTAMP_DIFF(CAST(CURRENT_DATE() AS timestamp),${TABLE}.created_date,hour)*24, NULL) ;;
+  }
+
   measure: total_cases {
     type: number
     sql: COUNT(${TABLE}.created_date) ;;

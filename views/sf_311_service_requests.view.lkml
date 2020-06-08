@@ -119,7 +119,7 @@ view: sf_311_service_requests {
     sql: COUNT(${TABLE}.closed_date) ;;
   }
 
-  measure: hours_open {
+  measure: days_open {
     type: average
     sql: IF(${TABLE}.closed_date IS NULL, TIMESTAMP_DIFF(CAST(CURRENT_DATE() AS timestamp),${TABLE}.created_date,hour)/24, NULL) ;;
   }

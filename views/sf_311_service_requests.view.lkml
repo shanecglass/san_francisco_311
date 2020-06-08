@@ -125,7 +125,7 @@ view: sf_311_service_requests {
   }
 
   measure: closure_rate {
-    type: percent_of_total
+    type: number
     sql: ${closed_cases}/${total_cases} ;;
   }
 

@@ -109,8 +109,8 @@ view: sf_311_service_requests {
     sql: ${TABLE}.resolution_action_updated_date ;;
   }
 
-  dimension: days_to_close {
-    type: number
+  measure: days_to_close {
+    type: average
     sql: ROUND(TIMESTAMP_DIFF(${TABLE}.closed_date, ${TABLE}.created_date, hour)/24,2) ;;
   }
 
